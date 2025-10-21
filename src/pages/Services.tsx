@@ -22,6 +22,8 @@ const Services = () => {
   };
 
   const filteredServices = getFilteredServices();
+  const shouldShowSubcategories = activeFilter === 'activity' && !activeSubcategory;
+  const shouldShowServices = (activeFilter !== 'activity' || activeSubcategory) && activeFilter !== 'all';
 
   const handleFilterClick = (filter: 'all' | 'activity' | 'tour' | 'transportation') => {
     setActiveFilter(filter);
@@ -97,7 +99,7 @@ const Services = () => {
         </div>
 
         {/* Activity Subcategories */}
-        {activeFilter === 'activity' && !activeSubcategory && (
+        {shouldShowSubcategories && (
           <div className="mb-12 animate-in fade-in slide-in-from-top-4 duration-500">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
               {activitySubcategories.map((subcategory) => (
@@ -127,7 +129,7 @@ const Services = () => {
         )}
 
         {/* Services Grid */}
-        {(activeFilter !== 'activity' || activeSubcategory) && (
+        {shouldShowServices && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
             {filteredServices.map((service) => (
               <ServiceCard key={service.id} service={service} />
@@ -136,7 +138,7 @@ const Services = () => {
         )}
 
         {/* Empty State */}
-        {filteredServices.length === 0 && (activeFilter !== 'activity' || activeSubcategory) && (
+        {filteredServices.length === 0 && shouldShowServices && (
           <div className="text-center py-12">
             <p className="text-muted-foreground text-lg">No services found in this category.</p>
           </div>

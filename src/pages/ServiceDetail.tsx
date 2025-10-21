@@ -132,12 +132,21 @@ const ServiceDetail = () => {
                 </div>
               )}
 
-              <Link to={`/checkout/${service.id}`} className="block mb-4">
-                <Button className="w-full" size="lg">
-                  Book Now
-                  <ArrowRight className="w-5 h-5" />
-                </Button>
-              </Link>
+              {service.id === 'city-to-city-transfer' ? (
+                <Link to="/contact" className="block mb-4">
+                  <Button className="w-full" size="lg">
+                    Contact us for custom quote
+                    <ArrowRight className="w-5 h-5" />
+                  </Button>
+                </Link>
+              ) : (
+                <Link to={`/checkout/${service.id}`} className="block mb-4">
+                  <Button className="w-full" size="lg">
+                    Book Now
+                    <ArrowRight className="w-5 h-5" />
+                  </Button>
+                </Link>
+              )}
 
               <div className="space-y-4 pt-4 border-t border-border">
                 <div className="flex items-center justify-between">

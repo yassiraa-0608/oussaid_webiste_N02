@@ -16,7 +16,26 @@ const GoogleIcon = ({ className }: { className?: string }) => (
 );
 
 const Home = () => {
-  const activities = getServicesByCategory('activity').slice(0, 6);
+  const allServices = getServicesByCategory('activity');
+  const tours = getServicesByCategory('tour');
+  const transportation = getServicesByCategory('transportation');
+
+  const featuredActivities = [
+    allServices.find(s => s.id === 'agafay-pack-complet'),
+    allServices.find(s => s.id === 'palmeraie-quad-1h-solo'),
+    allServices.find(s => s.id === 'agafay-camel-ride'),
+  ].filter(Boolean);
+
+  const featuredTours = [
+    tours.find(s => s.id === 'ourika-valley-tour'),
+    tours.find(s => s.id === 'essaouira-tour'),
+    tours.find(s => s.id === 'merzouga-tour'),
+  ].filter(Boolean);
+
+  const featuredTransportation = [
+    transportation.find(s => s.id === 'airport-transfer'),
+    transportation.find(s => s.id === 'city-to-city-transfer'),
+  ].filter(Boolean);
 
   return (
     <div className="min-h-screen">
@@ -82,6 +101,29 @@ const Home = () => {
               <h2 className="text-4xl font-bold mb-2">Exciting Activities</h2>
               <p className="text-muted-foreground">Thrilling adventures in Agafay, Palmeraie, and beyond</p>
             </div>
+            <Link to="/activities">
+              <Button variant="outline">
+                View All
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featuredActivities.map((activity) => (
+              <ServiceCard key={activity.id} service={activity} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tours Section */}
+      <section className="py-12 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between mb-12">
+            <div>
+              <h2 className="text-4xl font-bold mb-2">Popular Tours</h2>
+              <p className="text-muted-foreground">Discover Morocco's most beautiful destinations</p>
+            </div>
             <Link to="/services">
               <Button variant="outline">
                 View All
@@ -90,8 +132,25 @@ const Home = () => {
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {activities.map((activity) => (
-              <ServiceCard key={activity.id} service={activity} />
+            {featuredTours.map((tour) => (
+              <ServiceCard key={tour.id} service={tour} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Transportation Section */}
+      <section className="py-12">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between mb-12">
+            <div>
+              <h2 className="text-4xl font-bold mb-2">Transportation Services</h2>
+              <p className="text-muted-foreground">Reliable and comfortable transfers across Morocco</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {featuredTransportation.map((transport) => (
+              <ServiceCard key={transport.id} service={transport} />
             ))}
           </div>
         </div>
