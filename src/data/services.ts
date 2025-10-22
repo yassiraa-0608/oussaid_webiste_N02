@@ -407,10 +407,13 @@ export const services: Service[] = [
     description: 'Discover the picturesque port city of Essaouira, a UNESCO World Heritage site. Wander through the historic medina, visit the bustling harbor, and enjoy fresh seafood by the Atlantic Ocean.',
     price: '€45 / 450Dhs',
     duration: 'Full day',
-    image: placeholderImage,
+    image: 'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F2e1d2aab1883484ca89bef7324cd8724?format=webp&width=800',
     location: 'Essaouira',
     inclusions: ['Round-trip transport', 'Professional guide', 'Free time in medina', 'Photos stop'],
-    gallery: [placeholderImage, placeholderImage, placeholderImage],
+    gallery: [
+      'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F59b8dc80a3f74683883ae0fbadf490ce?format=webp&width=800',
+      'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F11799ed8575f4d92bc28d21287bce0c9?format=webp&width=800',
+    ],
   },
   {
     id: 'ouarzazate-tour',
