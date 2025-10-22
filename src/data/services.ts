@@ -378,7 +378,7 @@ export const services: Service[] = [
   {
     id: 'ouzoud-waterfalls-tour',
     category: 'tour',
-    title: 'Ouzود Waterfalls – 1 Day',
+    title: 'Ouzoud Waterfalls – 1 Day',
     shortDescription: 'Visit Morocco\'s most spectacular waterfalls and see wild monkeys in their natural habitat',
     description: 'Journey to the magnificent Ouzoud Waterfalls, one of North Africa\'s most stunning natural wonders. Enjoy a scenic hike, spot Barbary monkeys, and take a refreshing boat ride at the base of the falls.',
     price: '€40 / 400Dhs',
