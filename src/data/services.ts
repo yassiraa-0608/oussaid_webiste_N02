@@ -423,10 +423,13 @@ export const services: Service[] = [
     description: 'Explore the gateway to the Sahara Desert. Visit the ancient kasbah of Ait Ben Haddou, a UNESCO World Heritage site and famous filming location, along with the Atlas Film Studios in Ouarzazate.',
     price: '€50 / 500Dhs',
     duration: 'Full day',
-    image: placeholderImage,
+    image: 'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2Fc4ee61a2987b43c78b70dd120940e4d9?format=webp&width=800',
     location: 'Ouarzazate',
     inclusions: ['Round-trip transport', 'Professional guide', 'Entrance fees', 'Lunch', 'Photos stop'],
-    gallery: [placeholderImage, placeholderImage, placeholderImage],
+    gallery: [
+      'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2Fc8a9a9f47ebf49f6ab3b42866a2865d5?format=webp&width=800',
+      'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F7506b72e5628401d800527cb86812236?format=webp&width=800',
+    ],
   },
   {
     id: 'merzouga-tour',
