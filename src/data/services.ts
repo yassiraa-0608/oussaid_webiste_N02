@@ -375,10 +375,13 @@ export const services: Service[] = [
     description: 'Experience the beauty of the Ourika Valley, nestled in the foothills of the Atlas Mountains. Visit traditional Berber villages, explore local markets, and enjoy breathtaking waterfall views.',
     price: '€35 / 350Dhs',
     duration: 'Full day',
-    image: placeholderImage,
+    image: 'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2Fbd3d65f6ab2d4d5cb8b3184523df279d?format=webp&width=800',
     location: 'Ourika Valley',
     inclusions: ['Round-trip transport', 'Professional guide', 'Waterfall visit', 'Photos stop'],
-    gallery: [placeholderImage, placeholderImage, placeholderImage],
+    gallery: [
+      'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2Fafbb854a89b3485c971a7de2b8463cf5?format=webp&width=800',
+      'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2Ff9e05f76ac654b38b5d24759f0fa5e46?format=webp&width=800',
+    ],
   },
   {
     id: 'ouzoud-waterfalls-tour',
