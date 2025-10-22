@@ -485,7 +485,10 @@ export const services: Service[] = [
         description: 'Sunrise over dunes + breakfast in camp. Camel ride back to meet transport. Return via Ouarzazate with lunch stop. Arrive in Marrakech late afternoon (~6 PM).'
       }
     ],
-    gallery: [placeholderImage, placeholderImage, placeholderImage],
+    gallery: [
+      'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F16ab4df749334c5abdcc6632c11b6fb7?format=webp&width=800',
+      'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2Fe49fcfe412ff464c8d20577c48ac4a3c?format=webp&width=800',
+    ],
   },
 
   {
