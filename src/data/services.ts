@@ -37,10 +37,15 @@ export const services: Service[] = [
     description: 'Includes 1h quad, 30min camel ride, dinner with show and fire performance, pool access, and round-trip transport.',
     price: '€66 / 660Dhs',
     duration: 'Full experience',
-    image: placeholderImage,
+    image: 'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F63be210f3a324f06824181cec7a031a6?format=webp&width=800',
     location: 'Agafay Desert',
     inclusions: ['1h quad ride', '30min camel ride', 'Dinner & show', 'Pool access', 'Round-trip transport', 'Photos stop'],
-    gallery: [placeholderImage, placeholderImage, placeholderImage],
+    gallery: [
+      'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2Fcc57f8f0045b4300bbd0cd78fcebcdff?format=webp&width=800',
+      'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F0190eec513e649ae8a196c701c3c96f2?format=webp&width=800',
+      'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F55959b98a4974910b9d471aba1abdb6b?format=webp&width=800',
+      'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2Fa2a6321a2582421eadff880defe7c8d4?format=webp&width=800',
+    ],
   },
   {
     id: 'agafay-quad-dinner',
