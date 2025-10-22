@@ -23,7 +23,16 @@ export interface Service {
     price: string;
     priceNumeric: number;
   }[];
+  variants?: {
+    id: string;
+    label: string;
+    price: string;
+    description?: string;
+    duration?: string;
+    inclusions?: string[];
+  }[];
   isRental?: boolean;
+  hideFromList?: boolean;
 }
 
 export const services: Service[] = [
@@ -300,7 +309,7 @@ export const services: Service[] = [
     title: 'Biking Tour',
     shortDescription: 'Guided biking tour through Marrakech surroundings',
     description: 'Guided biking tour through Marrakech surroundings.',
-    price: '€45',
+    price: '��45',
     duration: '3 hours',
     image: placeholderImage,
     location: 'Marrakech Region',
