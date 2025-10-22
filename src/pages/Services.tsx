@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import agafayHero from '@/assets/agafay-hero.jpg';
 import palmeraieHero from '@/assets/palmeraie-hero.jpg';
 import heroMarrakech from '@/assets/hero-marrakech.jpg';
+import SEO from '@/components/SEO';
 
 const Services = () => {
   const [activeFilter, setActiveFilter] = useState<'all' | 'activity' | 'tour' | 'transportation'>('all');
@@ -23,7 +24,7 @@ const Services = () => {
 
   const filteredServices = getFilteredServices();
   const shouldShowSubcategories = activeFilter === 'activity' && !activeSubcategory;
-  const shouldShowServices = (activeFilter !== 'activity' || activeSubcategory) && activeFilter !== 'all';
+  const shouldShowServices = activeFilter === 'all' || (activeFilter !== 'activity' || activeSubcategory);
 
   const handleFilterClick = (filter: 'all' | 'activity' | 'tour' | 'transportation') => {
     setActiveFilter(filter);
@@ -57,6 +58,10 @@ const Services = () => {
 
   return (
     <div className="min-h-screen pt-24 pb-20">
+      <SEO
+        title="Our Services - Marrakech Tours, Activities & Transportation | Oussaid Tourism"
+        description="Browse all our services: Agafay Desert adventures, Palmeraie activities, Merzouga and Zagora desert tours, Ourika Valley excursions, airport transfers, and more. Book your perfect Marrakech experience today!"
+      />
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">

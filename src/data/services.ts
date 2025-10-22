@@ -12,6 +12,11 @@ export interface Service {
   image: string;
   location: string;
   inclusions: string[];
+  exclusions?: string[];
+  itinerary?: {
+    day: string;
+    description: string;
+  }[];
   gallery?: string[];
   priceVariants?: {
     label: string;
@@ -467,24 +472,51 @@ export const services: Service[] = [
     title: 'Merzouga Desert Tour',
     shortDescription: 'Experience the magical Sahara Desert with camel rides and overnight stay in traditional Berber camp',
     description: 'Embark on an unforgettable journey to the spectacular Erg Chebbi dunes of Merzouga. Experience authentic Sahara desert life with camel trekking, stunning sunset and sunrise views, traditional Berber hospitality, and a night under the stars in a desert camp. This 3-day adventure includes visits to the Atlas Mountains, Todra Gorges, and authentic Berber villages along the way.',
-    price: '€200 / 2000Dhs',
+    price: 'From €100 / 1000Dhs',
     duration: '3 days / 2 nights',
     image: placeholderImage,
     location: 'Merzouga - Sahara Desert',
-    inclusions: ['Round-trip transport', 'Professional guide', 'Camel trek', '2x Breakfast', '2x Dinner', 'Desert camp accommodation', 'Hotel accommodation', 'Sandboarding', 'Photos stop'],
+    inclusions: ['Round-trip transport', 'Professional guide', 'Camel trek', 'Breakfast and Dinner', 'Desert camp accommodation', 'Hotel accommodation', 'Sandboarding', 'Photos stop'],
     gallery: [placeholderImage, placeholderImage, placeholderImage],
+    priceVariants: [
+      { label: 'Adult', price: '€100 / 1000Dhs', priceNumeric: 100 },
+      { label: 'Child (under 10 years)', price: '€75 / 750Dhs', priceNumeric: 75 }
+    ],
   },
   {
     id: 'zagora-tour',
     category: 'tour',
     title: 'Zagora Desert Tour',
-    shortDescription: 'Discover the Draa Valley and Zagora desert with overnight camp experience',
-    description: 'Journey through the stunning Draa Valley to the ancient desert town of Zagora. Experience the beauty of the Sahara with a camel ride at sunset, spend the night in a traditional Berber camp under a blanket of stars, and wake up to a magical sunrise over the dunes. This 2-day tour offers a perfect introduction to desert life and includes visits to kasbahs, palm groves, and Berber villages.',
+    shortDescription: 'A two-day desert adventure from Marrakech to Zagora. Cross the High Atlas Mountains, visit Aït Ben Haddou and Draa Valley, then ride a camel into the dunes for a night under the stars',
+    description: 'A two-day desert adventure from Marrakech to Zagora. Cross the High Atlas Mountains, visit Aït Ben Haddou and Draa Valley, then ride a camel into the dunes for a night under the stars. Includes dinner and breakfast at the camp.',
     price: '€150 / 1500Dhs',
     duration: '2 days / 1 night',
     image: placeholderImage,
     location: 'Zagora - Draa Valley',
-    inclusions: ['Round-trip transport', 'Professional guide', 'Camel trek', 'Breakfast', 'Dinner', 'Desert camp accommodation', 'Sandboarding', 'Visit to kasbahs', 'Photos stop'],
+    inclusions: [
+      'Hotel/riad pickup & drop-off',
+      'Air-conditioned minivan',
+      '1 night in desert camp (Berber tent)',
+      'Sunset & sunrise camel trek',
+      'Dinner and breakfast in camp',
+      'English/French-speaking driver-guide'
+    ],
+    exclusions: [
+      'Lunches and beverages',
+      'Entrance fees (e.g. Aït Ben Haddou, studios)',
+      'Tips and personal expenses',
+      'Optional tent upgrades'
+    ],
+    itinerary: [
+      {
+        day: 'Day 1',
+        description: 'Early pickup (7:00–8:00 AM) from your Marrakech hotel/riad. Drive through the High Atlas Mountains (Tizi n’Tichka pass). Visit Aït Ben Haddou (UNESCO site) and explore the ksar. Continue through Ouarzazate and the Draa Valley. Camel ride at sunset into the Zagora dunes. Dinner and overnight in a Berber camp (music, campfire, stars).'
+      },
+      {
+        day: 'Day 2',
+        description: 'Sunrise over dunes + breakfast in camp. Camel ride back to meet transport. Return via Ouarzazate with lunch stop. Arrive in Marrakech late afternoon (~6 PM).'
+      }
+    ],
     gallery: [placeholderImage, placeholderImage, placeholderImage],
   },
 

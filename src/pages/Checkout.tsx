@@ -5,8 +5,9 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { getServiceById } from '@/data/services';
-import { Calendar, Users, Mail, Phone, User, ArrowLeft } from 'lucide-react';
+import { Calendar, Users, Mail, Phone, User, ArrowLeft, MapPin, Plane } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const Checkout = () => {
@@ -24,6 +25,12 @@ const Checkout = () => {
     message: '',
     startDate: '',
     endDate: '',
+    from: '',
+    to: '',
+    customFrom: '',
+    customTo: '',
+    flightNumber: '',
+    horseLabel: '',
   });
 
   const calculateDays = () => {
@@ -53,27 +60,48 @@ const Checkout = () => {
     try {
       const formSubmitUrl = 'https://formsubmit.co/obenhadya@gmail.com';
       
-      const bookingData = service?.isRental
-        ? {
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone,
-            from: formData.startDate,
-            to: formData.endDate,
-            number_of_days: calculateDays(),
-            message: formData.message,
-            service: service?.title,
-            price: service?.price,
-            _subject: `New Rental Booking: ${service?.title}`,
-            _template: 'table',
-          }
-        : {
-            ...formData,
-            service: service?.title,
-            price: service?.price,
-            _subject: `New Booking: ${service?.title}`,
-            _template: 'table',
-          };
+      let bookingData;
+
+      if (service?.isRental) {
+        bookingData = {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          from: formData.startDate,
+          to: formData.endDate,
+          number_of_days: calculateDays(),
+          message: formData.message,
+          service: service?.title,
+          price: service?.price,
+          _subject: `New Rental Booking: ${service?.title}`,
+          _template: 'table',
+        };
+      } else if (service?.id === 'airport-transfer') {
+        bookingData = {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          date: formData.date,
+          persons: formData.persons,
+          from: formData.from === 'Custom' ? formData.customFrom : formData.from,
+          to: formData.to === 'Custom' ? formData.customTo : formData.to,
+          flight_number: formData.flightNumber,
+          reference_label: formData.horseLabel,
+          message: formData.message,
+          service: service?.title,
+          price: service?.price,
+          _subject: `New Airport Transfer Booking: ${service?.title}`,
+          _template: 'table',
+        };
+      } else {
+        bookingData = {
+          ...formData,
+          service: service?.title,
+          price: service?.price,
+          _subject: `New Booking: ${service?.title}`,
+          _template: 'table',
+        };
+      }
 
       const response = await fetch(formSubmitUrl, {
         method: 'POST',
@@ -236,6 +264,137 @@ const Checkout = () => {
                             </div>
                           </div>
                         )}
+                      </div>
+                    ) : service?.id === 'airport-transfer' ? (
+                      <div className="space-y-4">
+                        <div className="grid grid-cols-2 gap-4">
+                          <div className="space-y-2">
+                            <Label htmlFor="from">From *</Label>
+                            <Select value={formData.from} onValueChange={(value) => setFormData({...formData, from: value})}>
+                              <SelectTrigger>
+                                <SelectValue placeholder="Select origin" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectItem value="Marrakech">Marrakech</SelectItem>
+                                <SelectItem value="Marrakech Airport">Marrakech Airport</SelectItem>
+                                <SelectItem value="Custom">Custom</SelectItem>
+                              </SelectContent>
+                            </Select>
+                          </div>
+
+                          <div className="space-y-2">
+                            <Label htmlFor="to">To *</Label>
+                            <Select value={formData.to} onValueChange={(value) => setFormData({...formData, to: value})}>
+                              <SelectTrigger>
+                                <SelectValue placeholder="Select destination" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectItem value="Marrakech">Marrakech</SelectItem>
+                                <SelectItem value="Marrakech Airport">Marrakech Airport</SelectItem>
+                                <SelectItem value="Custom">Custom</SelectItem>
+                              </SelectContent>
+                            </Select>
+                          </div>
+                        </div>
+
+                        {formData.from === 'Custom' && (
+                          <div className="space-y-2">
+                            <Label htmlFor="customFrom">Custom Origin Location *</Label>
+                            <div className="relative">
+                              <MapPin className="absolute left-3 top-3 w-5 h-5 text-muted-foreground" />
+                              <Input
+                                id="customFrom"
+                                name="customFrom"
+                                value={formData.customFrom}
+                                onChange={handleChange}
+                                className="pl-10"
+                                required
+                                placeholder="Enter custom location"
+                              />
+                            </div>
+                          </div>
+                        )}
+
+                        {formData.to === 'Custom' && (
+                          <div className="space-y-2">
+                            <Label htmlFor="customTo">Custom Destination Location *</Label>
+                            <div className="relative">
+                              <MapPin className="absolute left-3 top-3 w-5 h-5 text-muted-foreground" />
+                              <Input
+                                id="customTo"
+                                name="customTo"
+                                value={formData.customTo}
+                                onChange={handleChange}
+                                className="pl-10"
+                                required
+                                placeholder="Enter custom location"
+                              />
+                            </div>
+                          </div>
+                        )}
+
+                        <div className="grid grid-cols-2 gap-4">
+                          <div className="space-y-2">
+                            <Label htmlFor="date">Transfer Date *</Label>
+                            <div className="relative">
+                              <Calendar className="absolute left-3 top-3 w-5 h-5 text-muted-foreground" />
+                              <Input
+                                id="date"
+                                name="date"
+                                type="date"
+                                value={formData.date}
+                                onChange={handleChange}
+                                className="pl-10"
+                                required
+                                min={new Date().toISOString().split('T')[0]}
+                              />
+                            </div>
+                          </div>
+
+                          <div className="space-y-2">
+                            <Label htmlFor="persons">Number of Persons *</Label>
+                            <div className="relative">
+                              <Users className="absolute left-3 top-3 w-5 h-5 text-muted-foreground" />
+                              <Input
+                                id="persons"
+                                name="persons"
+                                type="number"
+                                min="1"
+                                max="20"
+                                value={formData.persons}
+                                onChange={handleChange}
+                                className="pl-10"
+                                required
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="flightNumber">Flight Number</Label>
+                          <div className="relative">
+                            <Plane className="absolute left-3 top-3 w-5 h-5 text-muted-foreground" />
+                            <Input
+                              id="flightNumber"
+                              name="flightNumber"
+                              value={formData.flightNumber}
+                              onChange={handleChange}
+                              className="pl-10"
+                              placeholder="e.g. AT123"
+                            />
+                          </div>
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="horseLabel">Reference/Horse Label</Label>
+                          <Input
+                            id="horseLabel"
+                            name="horseLabel"
+                            value={formData.horseLabel}
+                            onChange={handleChange}
+                            placeholder="For tracking purposes"
+                          />
+                        </div>
                       </div>
                     ) : (
                       <div className="grid grid-cols-2 gap-4">

@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import ServiceCard from '@/components/ServiceCard';
 import { getFeaturedServices, getServicesByCategory } from '@/data/services';
 import heroImage from '@/assets/hero-marrakech.jpg';
+import SEO from '@/components/SEO';
 
 // Google Icon Component
 const GoogleIcon = ({ className }: { className?: string }) => (
@@ -39,6 +40,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO />
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0">

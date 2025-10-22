@@ -1,10 +1,15 @@
 import { Users, Award, Heart, Shield, MapPin, Plane, Star } from 'lucide-react';
 import placeholderImage from '@/assets/placeholder.webp';
 import AnimatedCounter from '@/components/AnimatedCounter';
+import SEO from '@/components/SEO';
 
 const About = () => {
   return (
     <div className="min-h-screen pt-24 pb-20">
+      <SEO
+        title="About Us - Oussaid Tourism | Your Trusted Morocco Travel Partner"
+        description="Learn about Oussaid Tourism, your trusted partner for authentic Moroccan experiences since 2010. Expert guides, 350+ activities, 240+ tours, and 450+ transportation services."
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 py-20">
         <div className="container mx-auto px-4">
@@ -99,19 +104,20 @@ const About = () => {
             <h2 className="text-4xl font-bold text-center mb-12">Our Success in Numbers</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <AnimatedCounter
-                end={47}
+                end={350}
                 suffix="+"
                 icon={<MapPin className="w-8 h-8 text-primary" />}
                 label="Activities"
               />
               <AnimatedCounter
-                end={11}
+                end={240}
                 suffix="+"
                 icon={<Plane className="w-8 h-8 text-primary" />}
                 label="Tours"
               />
               <AnimatedCounter
-                end={2}
+                end={450}
+                suffix="+"
                 icon={<Users className="w-8 h-8 text-primary" />}
                 label="Transportation Services"
               />
