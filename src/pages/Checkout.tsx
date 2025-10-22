@@ -58,7 +58,7 @@ const Checkout = () => {
     setIsSubmitting(true);
 
     try {
-      const formSubmitUrl = 'https://formsubmit.co/obenhadya@gmail.com';
+      const formSubmitUrl = 'https://formsubmit.co/aitaliyassir55@gmail.com';
       
       let bookingData;
 
