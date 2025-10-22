@@ -122,8 +122,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-2">Email Us</h3>
-                    <a href="mailto:info@oussaidtourism.com" className="text-muted-foreground hover:text-primary transition-colors">
-                      info@oussaidtourism.com
+                    <a href="mailto:obenhadya@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                      obenhadya@gmail.com
                     </a>
                   </div>
                 </div>
