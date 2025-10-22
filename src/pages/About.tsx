@@ -104,19 +104,19 @@ const About = () => {
             <h2 className="text-4xl font-bold text-center mb-12">Our Success in Numbers</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <AnimatedCounter
-                end={350}
+                end={300}
                 suffix="+"
                 icon={<MapPin className="w-8 h-8 text-primary" />}
                 label="Activities"
               />
               <AnimatedCounter
-                end={240}
+                end={200}
                 suffix="+"
                 icon={<Plane className="w-8 h-8 text-primary" />}
                 label="Tours"
               />
               <AnimatedCounter
-                end={450}
+                end={400}
                 suffix="+"
                 icon={<Users className="w-8 h-8 text-primary" />}
                 label="Transportation Services"
