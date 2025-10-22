@@ -439,10 +439,13 @@ export const services: Service[] = [
     description: 'Embark on an unforgettable journey to the spectacular Erg Chebbi dunes of Merzouga. Experience authentic Sahara desert life with camel trekking, stunning sunset and sunrise views, traditional Berber hospitality, and a night under the stars in a desert camp. This 3-day adventure includes visits to the Atlas Mountains, Todra Gorges, and authentic Berber villages along the way.',
     price: 'From €100 / 1000Dhs',
     duration: '3 days / 2 nights',
-    image: placeholderImage,
+    image: 'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2Feef5e3634cd8406fbe94cdec81d57156?format=webp&width=800',
     location: 'Merzouga - Sahara Desert',
     inclusions: ['Round-trip transport', 'Professional guide', 'Camel trek', 'Breakfast and Dinner', 'Desert camp accommodation', 'Hotel accommodation', 'Sandboarding', 'Photos stop'],
-    gallery: [placeholderImage, placeholderImage, placeholderImage],
+    gallery: [
+      'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F4a7e933f980e4a1e885ecda90853113d?format=webp&width=800',
+      'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2Fa6e256472ba643f292ff7f54a7c18688?format=webp&width=800',
+    ],
     priceVariants: [
       { label: 'Adult', price: '€100 / 1000Dhs', priceNumeric: 100 },
       { label: 'Child (under 10 years)', price: '€75 / 750Dhs', priceNumeric: 75 }
