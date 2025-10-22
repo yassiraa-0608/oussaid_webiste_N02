@@ -195,6 +195,7 @@ export const services: Service[] = [
     location: 'Agafay Desert',
     inclusions: ['1h quad ride', 'Safety equipment', 'Round-trip transport', 'Photos stop'],
     gallery: [placeholderImage, placeholderImage, placeholderImage],
+    hideFromList: true,
   },
   {
     id: 'agafay-quad-2h',
