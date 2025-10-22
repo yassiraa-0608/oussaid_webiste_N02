@@ -18,7 +18,7 @@ const ContactMenu = () => {
     {
       icon: Mail,
       label: 'Email',
-      action: () => window.location.href = 'mailto:info@oussaidtourism.com',
+      action: () => window.location.href = 'mailto:obenhadya@gmail.com',
     },
   ];
 
