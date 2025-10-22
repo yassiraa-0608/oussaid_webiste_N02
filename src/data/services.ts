@@ -50,6 +50,7 @@ export const services: Service[] = [
     location: 'Agafay Desert',
     inclusions: ['1h quad ride', '30min camel ride', 'Dinner & show', 'Pool access', 'Round-trip transport', 'Photos stop'],
     gallery: [
+      'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F63be210f3a324f06824181cec7a031a6?format=webp&width=800',
       'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2Fcc57f8f0045b4300bbd0cd78fcebcdff?format=webp&width=800',
       'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F0190eec513e649ae8a196c701c3c96f2?format=webp&width=800',
       'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F55959b98a4974910b9d471aba1abdb6b?format=webp&width=800',
@@ -309,7 +310,7 @@ export const services: Service[] = [
     title: 'Biking Tour',
     shortDescription: 'Guided biking tour through Marrakech surroundings',
     description: 'Guided biking tour through Marrakech surroundings.',
-    price: '��45',
+    price: '€45',
     duration: '3 hours',
     image: placeholderImage,
     location: 'Marrakech Region',
