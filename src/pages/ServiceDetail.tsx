@@ -171,6 +171,44 @@ const ServiceDetail = () => {
                 </Link>
               )}
 
+              {service.variants && service.variants.length > 0 && (
+                <div className="relative mb-4">
+                  <button
+                    onClick={() => setShowVariantsDropdown(!showVariantsDropdown)}
+                    className="w-full px-4 py-2 bg-muted hover:bg-muted/80 rounded-lg transition-colors flex items-center justify-between"
+                  >
+                    <span className="text-sm font-medium">Discover Other Variations</span>
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform ${showVariantsDropdown ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+                  {showVariantsDropdown && otherVariants.length > 0 && (
+                    <div className="absolute top-full left-0 right-0 bg-white border border-border rounded-lg shadow-lg z-10 mt-1 overflow-hidden">
+                      {otherVariants.map((variant) => (
+                        <button
+                          key={variant.id}
+                          onClick={() => {
+                            setSelectedVariant(variant);
+                            setShowVariantsDropdown(false);
+                          }}
+                          className="w-full text-left px-4 py-3 border-b last:border-b-0 hover:bg-muted transition-colors"
+                        >
+                          <div className="flex justify-between items-start">
+                            <div>
+                              <p className="font-medium">{variant.label}</p>
+                              {variant.description && (
+                                <p className="text-xs text-muted-foreground mt-1">{variant.description}</p>
+                              )}
+                            </div>
+                            <p className="font-semibold text-primary text-sm ml-2 flex-shrink-0">{variant.price}</p>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+
               <div className="space-y-4 pt-4 border-t border-border">
                 <div className="flex items-center justify-between">
                   <span className="text-muted-foreground">Duration</span>
