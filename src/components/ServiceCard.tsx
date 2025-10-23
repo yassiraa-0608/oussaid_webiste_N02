@@ -44,20 +44,6 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
             <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
               {service.title}
             </h3>
-            {hasVariants && (
-              <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  setShowVariants(!showVariants);
-                }}
-                className="p-1 hover:bg-muted rounded transition-colors flex-shrink-0"
-              >
-                <ChevronDown
-                  className={`w-5 h-5 transition-transform ${showVariants ? 'rotate-180' : ''}`}
-                />
-              </button>
-            )}
           </div>
 
           {hasVariants && showVariants && (
