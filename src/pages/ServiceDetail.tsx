@@ -150,7 +150,7 @@ const ServiceDetail = () => {
               ) : (
                 <div className="mb-6">
                   <div className="text-sm text-muted-foreground mb-2">From</div>
-                  <div className="text-4xl font-bold text-primary">{service.price}</div>
+                  <div className="text-4xl font-bold text-primary">{currentPrice}</div>
                   <div className="text-sm text-muted-foreground">per person</div>
                 </div>
               )}
