@@ -16,6 +16,13 @@ const ServiceDetail = () => {
   const [selectedVariant, setSelectedVariant] = useState(service?.variants?.[0]);
   const [showVariantsDropdown, setShowVariantsDropdown] = useState(false);
 
+  const currentPrice = selectedVariant?.price || service?.price;
+  const currentDescription = selectedVariant?.description || service?.description;
+  const currentDuration = selectedVariant?.duration || service?.duration;
+  const currentInclusions = selectedVariant?.inclusions || service?.inclusions;
+
+  const otherVariants = service?.variants?.filter(v => v.id !== selectedVariant?.id) || [];
+
   const calculateTotal = () => {
     if (!service?.priceVariants) return null;
     let total = 0;
