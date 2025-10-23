@@ -54,8 +54,8 @@ const ThankYou = () => {
           <div className="mt-12 pt-8 border-t border-border">
             <p className="text-muted-foreground">
               Have questions? Reach us at{' '}
-              <a href="mailto:info@oussaidtourism.com" className="text-primary hover:underline">
-                info@oussaidtourism.com
+              <a href="mailto:obenhadya@gmail.com" className="text-primary hover:underline">
+                obenhadya@gmail.com
               </a>{' '}
               or call{' '}
               <a href="tel:+212123456789" className="text-primary hover:underline">

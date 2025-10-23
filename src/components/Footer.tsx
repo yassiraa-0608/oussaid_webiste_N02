@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Clock, Facebook, Instagram } from 'lucide-react';
-import logo from '@/assets/logo.png';
+import logo from '@/assets/logo-icon.png';
 
 const TikTokIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
@@ -49,7 +49,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2 text-muted-foreground">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-                <a href="mailto:info@oussaidtourism.com" className="text-sm hover:text-primary transition-colors">info@oussaidtourism.com</a>
+                <a href="mailto:obenhadya@gmail.com" className="text-sm hover:text-primary transition-colors">obenhadya@gmail.com</a>
               </li>
             </ul>
           </div>
