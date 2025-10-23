@@ -74,17 +74,29 @@ const ServiceDetail = () => {
         </div>
 
         {/* Top Section: Image + Booking Card */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+        <div className={`grid grid-cols-1 ${service.category !== 'transportation' ? 'lg:grid-cols-3' : 'lg:grid-cols-2'} gap-8 mb-12`}>
           {/* Image Gallery */}
-          <div className="lg:col-span-2">
-            <ImageGallery
-              images={[service.image, ...(service.gallery || [])]}
-              title={service.title}
-            />
-          </div>
+          {service.category !== 'transportation' && (
+            <div className="lg:col-span-2">
+              <ImageGallery
+                images={[service.image, ...(service.gallery || [])]}
+                title={service.title}
+              />
+            </div>
+          )}
+
+          {service.category === 'transportation' && (
+            <div className="lg:col-span-1">
+              <img
+                src={service.image}
+                alt={service.title}
+                className="w-full h-96 object-cover rounded-2xl shadow-elegant"
+              />
+            </div>
+          )}
 
           {/* Booking Card */}
-          <div className="lg:col-span-1">
+          <div className={service.category !== 'transportation' ? 'lg:col-span-1' : 'lg:col-span-1'}>
             <div className="bg-card border border-border rounded-2xl p-6 shadow-elegant sticky top-24">
               {service.priceVariants ? (
                 <div className="mb-6">
