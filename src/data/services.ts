@@ -425,7 +425,7 @@ export const services: Service[] = [
     title: 'Scooter Rental',
     shortDescription: 'Rent a scooter for a full-day city or countryside ride',
     description: 'Rent a scooter for a full-day city or countryside ride.',
-    price: '€50',
+    price: '��50',
     duration: 'Full day',
     image: placeholderImage,
     location: 'Marrakech',
@@ -555,7 +555,7 @@ export const services: Service[] = [
     description: 'A two-day desert adventure from Marrakech to Zagora. Cross the High Atlas Mountains, visit Aït Ben Haddou and Draa Valley, then ride a camel into the dunes for a night under the stars. Includes dinner and breakfast at the camp.',
     price: '€150 / 1500Dhs',
     duration: '2 days / 1 night',
-    image: placeholderImage,
+    image: 'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F2fda08ffc38342e885108cf40225225f?format=webp&width=800',
     location: 'Zagora - Draa Valley',
     inclusions: [
       'Hotel/riad pickup & drop-off',
