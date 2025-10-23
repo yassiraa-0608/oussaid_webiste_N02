@@ -231,7 +231,7 @@ const ServiceDetail = () => {
         <div className="space-y-12">
           <div>
             <h2 className="text-3xl font-bold mb-4">About This Experience</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">{service.description}</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">{currentDescription}</p>
           </div>
 
           {/* Map Itinerary - Hide for rentals */}
