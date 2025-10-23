@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { Clock, MapPin, ArrowRight } from 'lucide-react';
-import { useState } from 'react';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import type { Service } from '@/data/services';
@@ -10,21 +9,6 @@ interface ServiceCardProps {
 }
 
 const ServiceCard = ({ service }: ServiceCardProps) => {
-  const [selectedVariant, setSelectedVariant] = useState(service.variants?.[0]);
-  const [showVariants, setShowVariants] = useState(false);
-
-  const currentPrice = selectedVariant?.price || service.price;
-  const currentDuration = selectedVariant?.duration || service.duration;
-  const currentTitle = selectedVariant?.label || service.title;
-
-  const hasVariants = service.variants && service.variants.length > 0;
-
-  const handleVariantSelect = (e: React.MouseEvent, variant: any) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setSelectedVariant(variant);
-    setShowVariants(false);
-  };
 
   return (
     <Link to={`/service/${service.id}`} className="block">
