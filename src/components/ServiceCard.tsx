@@ -36,7 +36,7 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
           <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
-            {service.price}
+            {currentPrice}
           </div>
         </div>
         <CardContent className="p-6">
