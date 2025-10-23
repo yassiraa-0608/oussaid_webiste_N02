@@ -30,35 +30,8 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
             </h3>
           </div>
 
-          {hasVariants && showVariants && (
-            <div
-              className="absolute top-full left-4 right-4 bg-white border border-border rounded-lg shadow-lg z-10 mt-2 max-h-64 overflow-y-auto"
-              onClick={(e) => e.preventDefault()}
-            >
-              {service.variants!.map((variant) => (
-                <button
-                  key={variant.id}
-                  onClick={(e) => handleVariantSelect(e, variant)}
-                  className={`w-full text-left px-4 py-3 border-b last:border-b-0 hover:bg-muted transition-colors ${
-                    selectedVariant?.id === variant.id ? 'bg-primary/10 font-semibold' : ''
-                  }`}
-                >
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <p className="font-medium">{variant.label}</p>
-                      {variant.description && (
-                        <p className="text-sm text-muted-foreground">{variant.description}</p>
-                      )}
-                    </div>
-                    <p className="font-semibold text-primary text-sm ml-2 flex-shrink-0">{variant.price}</p>
-                  </div>
-                </button>
-              ))}
-            </div>
-          )}
-
           <p className="text-muted-foreground mb-4 line-clamp-2">
-            {selectedVariant?.description || service.shortDescription}
+            {service.shortDescription}
           </p>
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
             <div className="flex items-center gap-1">
