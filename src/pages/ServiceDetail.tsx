@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Clock, MapPin, Check, ArrowRight, ArrowLeft, Users } from 'lucide-react';
+import { Clock, MapPin, Check, ArrowRight, ArrowLeft, Users, ChevronDown } from 'lucide-react';
 import { getServiceById } from '@/data/services';
 import MapItinerary from '@/components/MapItinerary';
 import ImageGallery from '@/components/ImageGallery';
@@ -13,6 +13,8 @@ const ServiceDetail = () => {
   const navigate = useNavigate();
   const service = getServiceById(id || '');
   const [quantities, setQuantities] = useState<Record<string, number>>({});
+  const [selectedVariant, setSelectedVariant] = useState(service?.variants?.[0]);
+  const [showVariantsDropdown, setShowVariantsDropdown] = useState(false);
 
   const calculateTotal = () => {
     if (!service?.priceVariants) return null;
