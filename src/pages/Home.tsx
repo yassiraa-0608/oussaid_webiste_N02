@@ -23,7 +23,7 @@ const Home = () => {
 
   const featuredActivities = [
     allServices.find(s => s.id === 'agafay-pack-complet'),
-    allServices.find(s => s.id === 'palmeraie-quad-1h-solo'),
+    allServices.find(s => s.id === 'agafay-quad'),
     allServices.find(s => s.id === 'agafay-camel-ride'),
   ].filter(Boolean);
 
