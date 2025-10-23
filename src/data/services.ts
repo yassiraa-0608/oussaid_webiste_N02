@@ -276,7 +276,7 @@ export const services: Service[] = [
     title: 'Horse Ride (1h)',
     shortDescription: '1-hour horse ride experience in Agafay desert',
     description: '1-hour horse ride experience in Agafay desert.',
-    price: '€45 / 450Dhs',
+    price: '���45 / 450Dhs',
     duration: '1 hour',
     image: placeholderImage,
     location: 'Agafay Desert',
@@ -344,6 +344,7 @@ export const services: Service[] = [
     location: 'Marrakech Palmeraie',
     inclusions: ['1h quad ride', 'Safety equipment', 'Round-trip transport', 'Photos stop'],
     gallery: [placeholderImage, placeholderImage, placeholderImage],
+    hideFromList: true,
   },
   {
     id: 'palmeraie-quad-2h',
