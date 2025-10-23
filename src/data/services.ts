@@ -358,6 +358,7 @@ export const services: Service[] = [
     location: 'Marrakech Palmeraie',
     inclusions: ['2h quad ride', 'Safety equipment', 'Round-trip transport', 'Photos stop'],
     gallery: [placeholderImage, placeholderImage, placeholderImage],
+    hideFromList: true,
   },
   {
     id: 'palmeraie-quad-double',
@@ -372,6 +373,7 @@ export const services: Service[] = [
     location: 'Marrakech Palmeraie',
     inclusions: ['1h quad ride', 'Safety equipment', 'Round-trip transport', 'Photos stop'],
     gallery: [placeholderImage, placeholderImage, placeholderImage],
+    hideFromList: true,
   },
   {
     id: 'palmeraie-buggy-1h',
