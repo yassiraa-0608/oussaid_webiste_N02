@@ -610,7 +610,6 @@ export const services: Service[] = [
     image: placeholderImage,
     location: 'Morocco-wide',
     inclusions: ['Professional driver', 'Modern air-conditioned vehicle', 'Flexible departure times', 'Luggage assistance', 'Rest stops included'],
-    gallery: [placeholderImage, placeholderImage, placeholderImage],
   },
 
 ];
