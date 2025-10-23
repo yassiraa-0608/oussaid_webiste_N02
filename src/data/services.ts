@@ -598,7 +598,6 @@ export const services: Service[] = [
     image: placeholderImage,
     location: 'Marrakech Airport',
     inclusions: ['Professional driver', 'Clean comfortable vehicle', 'Meet & greet service', 'Luggage assistance'],
-    gallery: [placeholderImage, placeholderImage, placeholderImage],
   },
   {
     id: 'city-to-city-transfer',
