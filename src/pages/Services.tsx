@@ -13,13 +13,15 @@ const Services = () => {
   const [activeSubcategory, setActiveSubcategory] = useState<string | null>(null);
 
   const getFilteredServices = () => {
-    if (activeFilter === 'all') return services;
+    let filtered = services.filter(service => !service.hideFromList);
+
+    if (activeFilter === 'all') return filtered;
     if (activeFilter === 'activity' && activeSubcategory) {
-      return services.filter(service =>
+      return filtered.filter(service =>
         service.category === 'activity' && service.subcategory === activeSubcategory
       );
     }
-    return services.filter(service => service.category === activeFilter);
+    return filtered.filter(service => service.category === activeFilter);
   };
 
   const filteredServices = getFilteredServices();
