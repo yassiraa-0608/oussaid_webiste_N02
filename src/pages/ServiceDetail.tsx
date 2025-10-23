@@ -69,11 +69,13 @@ const ServiceDetail = () => {
 
         {/* Title */}
         <div className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">{service.title}</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            {selectedVariant?.label || service.title}
+          </h1>
           <div className="flex items-center gap-6 text-muted-foreground">
             <div className="flex items-center gap-2">
               <Clock className="w-5 h-5" />
-              <span>{service.duration}</span>
+              <span>{currentDuration}</span>
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="w-5 h-5" />
