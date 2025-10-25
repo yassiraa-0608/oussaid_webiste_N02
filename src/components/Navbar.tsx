@@ -151,6 +151,9 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
+              <div className="py-4 px-4">
+                <LanguageSwitcher isScrolled={true} isHomePage={false} />
+              </div>
             </nav>
 
             {/* Book Now Button in Mobile Menu */}
