@@ -83,7 +83,7 @@ const Navbar = () => {
                   size="default"
                   className="ml-4"
                 >
-                  Book Now
+                  {t('navbar.bookNow')}
                 </Button>
               </Link>
             </div>
