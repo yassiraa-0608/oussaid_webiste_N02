@@ -162,7 +162,7 @@ const Navbar = () => {
             <div className="px-4 pb-6 border-t border-gray-200 pt-4">
               <Link to="/contact" onClick={() => setIsOpen(false)}>
                 <Button variant="default" size="lg" className="w-full">
-                  Book Now
+                  {t('navbar.bookNow')}
                 </Button>
               </Link>
             </div>
