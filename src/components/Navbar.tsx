@@ -3,12 +3,14 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { useTranslate } from '@/hooks/useTranslate';
 import logoIcon from '@/assets/logo-icon.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const { t } = useTranslate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,10 +27,10 @@ const Navbar = () => {
   }, [location.pathname]);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Services', path: '/services' },
-    { name: 'About', path: '/about' },
-    { name: 'Contact', path: '/contact' },
+    { name: t('navbar.home'), path: '/' },
+    { name: t('navbar.services'), path: '/services' },
+    { name: t('navbar.about'), path: '/about' },
+    { name: t('navbar.contact'), path: '/contact' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
