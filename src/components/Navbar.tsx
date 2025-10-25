@@ -74,8 +74,9 @@ const Navbar = () => {
                   }`} />
                 </Link>
               ))}
+              <LanguageSwitcher isScrolled={isScrolled} isHomePage={isHomePage} />
               <Link to="/contact">
-                <Button 
+                <Button
                   variant={(isScrolled || !isHomePage) ? "default" : "hero"}
                   size="default"
                   className="ml-4"
