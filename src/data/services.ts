@@ -623,7 +623,7 @@ export const services: Service[] = [
     title: 'Ouarzazate – 1 Day',
     shortDescription: 'Visit the famous movie studios and the UNESCO-listed fortress of Ait Ben Haddou',
     description: 'Explore the gateway to the Sahara Desert. Visit the ancient kasbah of Ait Ben Haddou, a UNESCO World Heritage site and famous filming location, along with the Atlas Film Studios in Ouarzazate.',
-    price: '€50 / 500Dhs',
+    price: '€30 / 300Dhs',
     duration: 'Full day | Departure at 7:30',
     image: 'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2Fc4ee61a2987b43c78b70dd120940e4d9?format=webp&width=800',
     location: 'Ouarzazate',
@@ -631,6 +631,10 @@ export const services: Service[] = [
     gallery: [
       'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2Fc8a9a9f47ebf49f6ab3b42866a2865d5?format=webp&width=800',
       'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F7506b72e5628401d800527cb86812236?format=webp&width=800',
+    ],
+    priceVariants: [
+      { label: 'Adult', price: '€30 / 300Dhs', priceNumeric: 30 },
+      { label: 'Child (-7 years)', price: '€20 / 200Dhs', priceNumeric: 20 }
     ],
   },
   {
