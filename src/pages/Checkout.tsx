@@ -128,10 +128,22 @@ const Checkout = () => {
           _template: 'table',
         };
       } else {
+        const totalPrice = service?.priceVariants ? getTotalPriceDisplay() : displayPrice;
         bookingData = {
-          ...formData,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          date: formData.date,
+          ...(service?.priceVariants ? {
+            adults: formData.adultsCount,
+            children: formData.childrenCount,
+            total_price: totalPrice,
+          } : {
+            persons: formData.persons,
+          }),
+          message: formData.message,
           service: serviceTitle,
-          price: displayPrice,
+          price: totalPrice,
           _subject: `New Booking: ${serviceTitle}`,
           _template: 'table',
         };
