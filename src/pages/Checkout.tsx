@@ -431,41 +431,82 @@ const Checkout = () => {
                         </div>
                       </div>
                     ) : (
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                          <Label htmlFor="date">Preferred Date *</Label>
-                          <div className="relative">
-                            <Calendar className="absolute left-3 top-3 w-5 h-5 text-muted-foreground" />
-                            <Input
-                              id="date"
-                              name="date"
-                              type="date"
-                              value={formData.date}
-                              onChange={handleChange}
-                              className="pl-10"
-                              required
-                              min={new Date().toISOString().split('T')[0]}
-                            />
+                      <div className="space-y-4">
+                        <div className="grid grid-cols-2 gap-4">
+                          <div className="space-y-2">
+                            <Label htmlFor="date">Preferred Date *</Label>
+                            <div className="relative">
+                              <Calendar className="absolute left-3 top-3 w-5 h-5 text-muted-foreground" />
+                              <Input
+                                id="date"
+                                name="date"
+                                type="date"
+                                value={formData.date}
+                                onChange={handleChange}
+                                className="pl-10"
+                                required
+                                min={new Date().toISOString().split('T')[0]}
+                              />
+                            </div>
                           </div>
+
+                          {service?.priceVariants ? (
+                            <div className="space-y-2">
+                              <Label htmlFor="adultsCount">Number of Adults *</Label>
+                              <div className="relative">
+                                <Users className="absolute left-3 top-3 w-5 h-5 text-muted-foreground" />
+                                <Input
+                                  id="adultsCount"
+                                  name="adultsCount"
+                                  type="number"
+                                  min="1"
+                                  max="20"
+                                  value={formData.adultsCount}
+                                  onChange={handleChange}
+                                  className="pl-10"
+                                  required
+                                />
+                              </div>
+                            </div>
+                          ) : (
+                            <div className="space-y-2">
+                              <Label htmlFor="persons">Number of Persons *</Label>
+                              <div className="relative">
+                                <Users className="absolute left-3 top-3 w-5 h-5 text-muted-foreground" />
+                                <Input
+                                  id="persons"
+                                  name="persons"
+                                  type="number"
+                                  min="1"
+                                  max="20"
+                                  value={formData.persons}
+                                  onChange={handleChange}
+                                  className="pl-10"
+                                  required
+                                />
+                              </div>
+                            </div>
+                          )}
                         </div>
 
-                        <div className="space-y-2">
-                          <Label htmlFor="persons">Number of Persons *</Label>
-                          <div className="relative">
-                            <Users className="absolute left-3 top-3 w-5 h-5 text-muted-foreground" />
-                            <Input
-                              id="persons"
-                              name="persons"
-                              type="number"
-                              min="1"
-                              max="20"
-                              value={formData.persons}
-                              onChange={handleChange}
-                              className="pl-10"
-                              required
-                            />
+                        {service?.priceVariants && (
+                          <div className="space-y-2">
+                            <Label htmlFor="childrenCount">Number of Children (-7 years)</Label>
+                            <div className="relative">
+                              <Users className="absolute left-3 top-3 w-5 h-5 text-muted-foreground" />
+                              <Input
+                                id="childrenCount"
+                                name="childrenCount"
+                                type="number"
+                                min="0"
+                                max="20"
+                                value={formData.childrenCount}
+                                onChange={handleChange}
+                                className="pl-10"
+                              />
+                            </div>
                           </div>
-                        </div>
+                        )}
                       </div>
                     )}
 
