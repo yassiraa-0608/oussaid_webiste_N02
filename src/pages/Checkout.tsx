@@ -54,6 +54,28 @@ const Checkout = () => {
     return 0;
   };
 
+  const calculateTotalPrice = () => {
+    if (service?.priceVariants && service.priceVariants.length > 0) {
+      const adultPrice = service.priceVariants.find(v => v.label === 'Adult')?.priceNumeric || 0;
+      const childPrice = service.priceVariants.find(v => v.label.includes('Child'))?.priceNumeric || 0;
+
+      const adultsCount = parseInt(formData.adultsCount) || 1;
+      const childrenCount = parseInt(formData.childrenCount) || 0;
+
+      const total = (adultsCount * adultPrice) + (childrenCount * childPrice);
+      return total;
+    }
+    return null;
+  };
+
+  const getTotalPriceDisplay = () => {
+    const total = calculateTotalPrice();
+    if (total !== null) {
+      return `€${total} / ${total * 10}Dhs`;
+    }
+    return displayPrice;
+  };
+
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
