@@ -583,7 +583,7 @@ export const services: Service[] = [
     title: 'Ouzoud Waterfalls – 1 Day',
     shortDescription: 'Visit Morocco\'s most spectacular waterfalls and see wild monkeys in their natural habitat',
     description: 'Journey to the magnificent Ouzoud Waterfalls, one of North Africa\'s most stunning natural wonders. Enjoy a scenic hike, spot Barbary monkeys, and take a refreshing boat ride at the base of the falls.',
-    price: '€40 / 400Dhs',
+    price: '€30 / 300Dhs',
     duration: 'Full day | Departure at 8:30',
     image: 'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F253dc0b0e0874aad9b1f7e4818963077?format=webp&width=800',
     location: 'Ouzoud',
@@ -591,6 +591,10 @@ export const services: Service[] = [
     gallery: [
       'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F1452e1e03efe40cba2060b6920a3fffd?format=webp&width=800',
       'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F4b7d76de6d784244b8cc7ad1160e1a1f?format=webp&width=800',
+    ],
+    priceVariants: [
+      { label: 'Adult', price: '€30 / 300Dhs', priceNumeric: 30 },
+      { label: 'Child (-7 years)', price: '€20 / 200Dhs', priceNumeric: 20 }
     ],
   },
   {
