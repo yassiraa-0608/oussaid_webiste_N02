@@ -565,10 +565,30 @@ const Checkout = () => {
                       <span className="text-muted-foreground">Location</span>
                       <span className="font-medium">{service.location}</span>
                     </div>
-                    <div className="flex justify-between items-center pt-4 border-t">
-                      <span className="font-semibold">Price per person</span>
-                      <span className="text-2xl font-bold text-primary">{displayPrice}</span>
-                    </div>
+
+                    {service?.priceVariants ? (
+                      <div className="pt-4 border-t space-y-2">
+                        <div className="flex justify-between text-sm">
+                          <span className="text-muted-foreground">Adults ({formData.adultsCount}) × {service.priceVariants.find(v => v.label === 'Adult')?.price}</span>
+                          <span className="font-medium">€{(parseInt(formData.adultsCount) || 1) * (service.priceVariants.find(v => v.label === 'Adult')?.priceNumeric || 0)}</span>
+                        </div>
+                        {parseInt(formData.childrenCount) > 0 && (
+                          <div className="flex justify-between text-sm">
+                            <span className="text-muted-foreground">Children ({formData.childrenCount}) × {service.priceVariants.find(v => v.label.includes('Child'))?.price}</span>
+                            <span className="font-medium">€{(parseInt(formData.childrenCount) || 0) * (service.priceVariants.find(v => v.label.includes('Child'))?.priceNumeric || 0)}</span>
+                          </div>
+                        )}
+                        <div className="flex justify-between items-center pt-2 border-t">
+                          <span className="font-semibold">Total Price</span>
+                          <span className="text-2xl font-bold text-primary">{getTotalPriceDisplay()}</span>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="flex justify-between items-center pt-4 border-t">
+                        <span className="font-semibold">Price per person</span>
+                        <span className="text-2xl font-bold text-primary">{displayPrice}</span>
+                      </div>
+                    )}
                   </div>
                 </CardContent>
               </Card>
