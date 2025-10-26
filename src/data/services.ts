@@ -563,7 +563,7 @@ export const services: Service[] = [
     title: 'Ourika Valley – 1 Day',
     shortDescription: 'Discover the stunning Ourika Valley with its waterfalls and traditional Berber villages',
     description: 'Experience the beauty of the Ourika Valley, nestled in the foothills of the Atlas Mountains. Visit traditional Berber villages, explore local markets, and enjoy breathtaking waterfall views.',
-    price: '€35 / 350Dhs',
+    price: '€20 / 200Dhs',
     duration: 'Full day | Departure at 8:30 or 9:00',
     image: 'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2Fbd3d65f6ab2d4d5cb8b3184523df279d?format=webp&width=800',
     location: 'Ourika Valley',
@@ -571,6 +571,10 @@ export const services: Service[] = [
     gallery: [
       'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2Fafbb854a89b3485c971a7de2b8463cf5?format=webp&width=800',
       'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2Ff9e05f76ac654b38b5d24759f0fa5e46?format=webp&width=800',
+    ],
+    priceVariants: [
+      { label: 'Adult', price: '€20 / 200Dhs', priceNumeric: 20 },
+      { label: 'Child (-7 years)', price: '€10 / 100Dhs', priceNumeric: 10 }
     ],
   },
   {
