@@ -30,6 +30,8 @@ const Checkout = () => {
     phone: '',
     date: '',
     persons: '1',
+    adultsCount: '1',
+    childrenCount: '0',
     message: '',
     startDate: '',
     endDate: '',
