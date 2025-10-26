@@ -82,6 +82,9 @@ const ImageGallery = ({ images, title, disableAutoplay = false }: ImageGalleryPr
                     className="w-full h-full object-cover bg-black"
                     controls
                     controlsList="nodownload"
+                    preload="metadata"
+                    playsinline
+                    playsInline
                   />
                 ) : (
                   <img
