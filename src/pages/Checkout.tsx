@@ -149,13 +149,14 @@ const Checkout = () => {
         };
       }
 
+      const formData = new FormData();
+      Object.entries(bookingData).forEach(([key, value]) => {
+        formData.append(key, String(value));
+      });
+
       const response = await fetch(formSubmitUrl, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify(bookingData),
+        body: formData,
       });
 
       if (response.ok) {
