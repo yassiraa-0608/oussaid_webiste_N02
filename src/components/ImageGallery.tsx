@@ -187,6 +187,9 @@ const ImageGallery = ({ images, title, disableAutoplay = false }: ImageGalleryPr
                       controls
                       controlsList="nodownload"
                       autoPlay
+                      preload="metadata"
+                      playsinline
+                      playsInline
                     />
                   ) : (
                     <img
